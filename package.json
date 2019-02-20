@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "0.10.1-0",
+  "version": "0.10.1-2",
   "name": "react-native-web-monorepo",
   "scripts": {
     "clean": "del ./packages/*/dist",
@@ -19,6 +19,7 @@
     "lint": "yarn lint:check --fix",
     "lint:check": "eslint packages scripts",
     "precommit": "lint-staged",
+    "ccrelease": "npm run compile && npm publish packages/react-native-web --registry=https://npm.citychallenge.app",
     "prerelease": "yarn test && yarn compile && yarn compile:commonjs",
     "release": "node ./scripts/release/publish.js",
     "postrelease": "yarn benchmarks:release && yarn examples:release && yarn website:release",
